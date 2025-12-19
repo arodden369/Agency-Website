@@ -72,11 +72,11 @@ export function Hero() {
         >
           <div className="relative w-full rounded-2xl overflow-hidden" style={{ paddingTop: "56.25%" }}>
             <iframe
-              src="https://fast.wistia.net/embed/iframe/qwocgvuciy"
-              title="Video"
-              allow="autoplay; fullscreen"
+              loading="lazy"
+              src="https://www.canva.com/design/DAG76ETqz4k/_EA6hUfi4fbTe6x9M1QGCg/view?embed"
               allowFullScreen
-              className="absolute top-0 left-0 w-full h-full"
+              allow="fullscreen"
+              className="absolute top-0 left-0 w-full h-full border-0"
             />
           </div>
         </motion.div>
