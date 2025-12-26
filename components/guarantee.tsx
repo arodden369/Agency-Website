@@ -22,7 +22,7 @@ export function Guarantee() {
         "Yes — full flexibility. Pause, resume, or scale anytime with the click of a button. You're in complete control of your lead volume based on your capacity.",
     },
     {
-      question: "What's the 3-day free trial?",
+      question: "What's the 3-day trial?",
       answer:
         "3 days of full daily lead flow. Experience real homeowner inquiries coming directly to you before making any commitment. See the quality firsthand with no service fees during the trial.",
     },

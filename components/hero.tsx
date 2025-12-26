@@ -19,7 +19,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.05, ease: "easeOut" }}
           className="inline-flex items-center gap-4 px-6 py-2 glass rounded-full mb-6 text-sm font-medium"
         >
-          <span className="text-blue-400">3-Day Free Trial — No Service Fees</span>
+          <span className="text-blue-400">3-Day Trial — No Service Fees</span>
           <span className="text-white/40">|</span>
           <span className="text-white/70">Experience Daily Leads Risk-Free</span>
         </motion.div>
@@ -53,7 +53,7 @@ export function Hero() {
           className="text-white/80 text-xl md:text-2xl leading-relaxed mb-4 max-w-5xl mx-auto font-medium"
         >
           License our AI-powered lead gen system for consistent homeowners who express interest in getting an
-          estimate—connecting directly to your phone. Start with a 3-day free trial.
+          estimate—connecting directly to your phone. Start with a 3-day trial.
         </motion.p>
 
         <motion.div
@@ -109,7 +109,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="relative z-50 group px-10 py-5 bg-white text-black rounded-full font-bold text-xl overflow-hidden transition-all hover:scale-105 hover:shadow-2xl inline-block pointer-events-auto"
           >
-            <span className="relative z-10">Start Your 3-Day Free Trial</span>
+            <span className="relative z-10">Start Your 3-Day Trial</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
           </a>
         </motion.div>
