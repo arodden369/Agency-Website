@@ -60,16 +60,40 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="max-w-5xl mx-auto mb-12 glass p-4 rounded-3xl"
+          className="max-w-5xl mx-auto mb-12"
         >
-          <div className="relative w-full rounded-2xl overflow-hidden" style={{ paddingTop: "56.25%" }}>
-            <iframe
-              loading="lazy"
-              src="https://www.canva.com/design/DAG76ETqz4k/_EA6hUfi4fbTe6x9M1QGCg/view?embed"
-              allowFullScreen
-              allow="fullscreen"
-              className="absolute top-0 left-0 w-full h-full border-0"
-            />
+          <div className="relative p-1 rounded-3xl bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600">
+            <div className="glass rounded-[22px] p-3 overflow-hidden">
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: 0,
+                  paddingTop: "56.25%",
+                  paddingBottom: 0,
+                  overflow: "hidden",
+                  borderRadius: "16px",
+                  willChange: "transform",
+                }}
+              >
+                <iframe
+                  loading="lazy"
+                  style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100%",
+                    top: 0,
+                    left: 0,
+                    border: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                  src="https://www.canva.com/design/DAG76ETqz4k/_EA6hUfi4fbTe6x9M1QGCg/view?embed"
+                  allowFullScreen
+                  allow="fullscreen"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
 
