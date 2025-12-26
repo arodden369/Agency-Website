@@ -7,34 +7,34 @@ import { useState } from "react"
 export function Guarantee() {
   const faqs = [
     {
-      question: "How Long before I get my 1st lead?",
+      question: "How soon do leads start?",
       answer:
-        "You can start getting leads in 1-3 days. All we need are your zip codes and the data you would like to start.",
+        "Daily flow can begin within 1-3 days of activating your system. Experience it immediately in your 3-day free trial — see real homeowner inquiries from people interested in estimates coming directly to your phone.",
     },
     {
-      question: "Can I pause, resume, increase or decrease lead flow?",
+      question: "How do leads come in?",
       answer:
-        "Yes, absolutely! You have full control over your lead flow. You can pause, resume, increase or decrease the number of leads at any time with the click of a button.",
+        "Direct inbound conversations to your phone/app for real-time, personal handling. Homeowners who've expressed interest in an estimate connect with you directly, creating instant trust and organic conversations that convert.",
     },
     {
-      question: "What will the quality of the lead be like?",
+      question: "Can I pause or adjust?",
       answer:
-        "All leads are pre-qualified homeowners who have actively requested quotes for your services. They've been vetted by our team to ensure they're ready to hire a contractor in the next 1-6 weeks.",
+        "Yes — full flexibility. Pause, resume, or scale anytime with the click of a button. You're in complete control of your lead volume based on your capacity.",
     },
     {
-      question: "What Happens after I get the Lead?",
+      question: "What's the 3-day free trial?",
       answer:
-        "Once you receive a lead, we notify the homeowner that you'll be reaching out. From there, you handle the estimate and closing process. The homeowner is expecting your call.",
+        "3 days of full daily lead flow. Experience real homeowner inquiries coming directly to you before making any commitment. See the quality firsthand with no service fees during the trial.",
     },
     {
-      question: "What if I don't like the lead?",
+      question: "What makes leads high-quality?",
       answer:
-        "If a lead has incorrect contact information, falls outside your service area, or doesn't meet our qualification criteria, we'll replace it at no cost. 1-to-1 replacement guaranteed.",
+        "Motivated homeowners in your exclusive territories who express interest in getting an estimate and make direct contact with you. Because they reach out to you, trust is built instantly, resulting in superior conversions compared to cold leads.",
     },
     {
-      question: "Are the leads geographically located?",
+      question: "Are the leads geographically exclusive?",
       answer:
-        "Yes! All leads are located in the zip codes you specifically choose during setup. You get exclusive rights to those areas—we won't work with competing contractors in your zones.",
+        "Yes! All leads are located in the area you specifically choose during setup. You get exclusive rights to those areas—we won't work with competing contractors in your zones.",
     },
   ]
 
@@ -52,9 +52,9 @@ export function Guarantee() {
         >
           <p className="text-sm uppercase tracking-wider text-blue-400 mb-4">Pricing</p>
           <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-balance">
-            <span className="text-blue-400">Transparent Pricing,</span>
+            <span className="text-blue-400">Risk-Free Licensing</span>
             <br />
-            No Hidden Fees Guaranteed!
+            Start with a 3-Day Free Trial
           </h2>
           <p className="text-xl text-white/60 max-w-3xl mx-auto mb-4">No contracts. Pause or cancel anytime.</p>
         </motion.div>
@@ -66,37 +66,43 @@ export function Guarantee() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-2xl mx-auto glass p-12 rounded-3xl mb-20 text-center"
         >
-          <h3 className="text-3xl font-bold mb-4">Custom</h3>
-          <p className="text-white/70 mb-8">We Offer Bulk Discounts For Team Leaders.</p>
-          <div className="text-6xl font-bold mb-8">
-            <span className="text-blue-400">$45-120</span>
-            <span className="text-2xl text-white/60"> / lead</span>
+          <h3 className="text-3xl font-bold mb-4">Custom Licensing Plans</h3>
+          <p className="text-white/70 mb-8">Tailored to your territory, volume goals, and growth targets.</p>
+          <div className="text-5xl font-bold mb-8">
+            <span className="text-blue-400">3-Day Free Trial</span>
           </div>
           <ul className="text-left space-y-3 mb-8 text-white/80">
             <li className="flex items-start gap-3">
               <span className="text-blue-400 mt-1">✓</span>
-              <span>Everything Mentioned</span>
+              <span>Exclusive territory access</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-400 mt-1">✓</span>
-              <span>Customized approaches</span>
+              <span>Daily homeowner inquiries from people seeking estimates</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-400 mt-1">✓</span>
-              <span>Discounts For Bulk</span>
+              <span>Full system control & flexibility</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-400 mt-1">✓</span>
-              <span>And More…</span>
+              <span>No service fees during trial period</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-blue-400 mt-1">✓</span>
+              <span>24/7 support & optimization</span>
             </li>
           </ul>
+          <p className="text-sm text-white/60 mb-6">
+            Details discussed on call — designed for massive ROI with flexible commitment.
+          </p>
           <a
             href="https://links.grounder-ai.com/widget/booking/yVg1a5YBBPAqC7XeMKEX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-white text-black rounded-full font-bold text-lg hover:scale-105 transition-transform relative z-50 pointer-events-auto"
           >
-            Book a Call
+            Book a Call to Start Your Free Trial
           </a>
         </motion.div>
 
@@ -152,14 +158,14 @@ export function Guarantee() {
           className="text-center relative z-50 glass p-12 rounded-3xl max-w-4xl mx-auto"
         >
           <p className="text-sm uppercase tracking-wider text-blue-400 mb-4">
-            $0 Startup Fees & No Hidden Fees For a Limited Time
+            3-Day Free Trial — No Service Fees During Trial
           </p>
           <h3 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Partner with Us and Elevate to New Heights!
+            License GrounderAI — Start Your 3-Day Free Trial Today
           </h3>
           <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
-            Suited for contractors and company owners seeking qualified homeowner leads without the fluff so all they
-            have to do is close
+            Partner with us for daily homeowner inquiries from people interested in estimates. Experience consistent,
+            high-quality leads flowing directly to you.
           </p>
           <a
             href="https://links.grounder-ai.com/widget/booking/yVg1a5YBBPAqC7XeMKEX"
@@ -170,10 +176,9 @@ export function Guarantee() {
             Book a Call
           </a>
           <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-white/50">
-            <span>Empty calendar? fixed</span>
-            <span>Slow Season? Not Anymore</span>
-            <span>No Leads? No Problem</span>
-            <span>Low Pipeline? We Fix</span>
+            <span>Empty calendar? Fixed</span>
+            <span>Slow Season? Over</span>
+            <span>Low Pipeline? Solved</span>
           </div>
         </motion.div>
       </div>

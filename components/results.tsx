@@ -14,7 +14,7 @@ export function Results() {
   const testimonials = [
     {
       name: "Travis Sly",
-      title: "Co-Owner of Pro Painting & More",
+      location: "Co-Owner of Pro Painting & More",
       result: "Within Only 72 Hours of Joining Us, Travis Booked Over 8 Qualified Appointments!",
       content:
         "The speed was incredible. We went from signing up to having a packed calendar in less than 3 days. The leads are qualified and ready to get quotes.",
@@ -22,7 +22,7 @@ export function Results() {
     },
     {
       name: "Brett Muir",
-      title: "Owner of Link Roofer",
+      location: "Owner of Link Roofer",
       result: "Brett landed a full roof replacement in the first 5 days working with us!",
       content:
         "First week in and I already closed a full roof job. These aren't tire kickers—they're homeowners ready to hire.",
@@ -30,8 +30,8 @@ export function Results() {
     },
     {
       name: "Anthony",
-      title: "Owner of Kos Home Improvements LLC",
-      result: "Anthony Landed A Job From the first $75 spent with us!",
+      location: "Owner of Kos Home Improvements LLC",
+      result: "Anthony Landed A Job From his free trial and instantly got started on the service!",
       content: "ROI was instant. First lead turned into a paying job. Can't ask for better than that.",
       rating: 5,
     },
@@ -82,7 +82,7 @@ export function Results() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="glass glass-hover p-8 rounded-3xl mb-12"
           >
             <Image
@@ -116,7 +116,7 @@ export function Results() {
 
                 <div className="pt-4 border-t border-white/10">
                   <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-white/60">{testimonial.title}</div>
+                  <div className="text-sm text-white/60">{testimonial.location}</div>
                 </div>
               </motion.div>
             ))}

@@ -5,25 +5,39 @@ import { motion } from "framer-motion"
 export function Difference() {
   const comparisons = [
     {
-      title: "No Startup Cost",
+      title: "Exclusive Territories",
       withUs:
-        "Each Contractor we work with gets their own zip codes exclusively handpicked, and once chosen, we cannot work with any other contractor there.",
+        "Each contractor gets exclusive handpicked zip codes — no competition from others we work with. Your territory, your leads.",
       withoutUs:
-        "$500-$3000 Startups. Companies simply only make their money this way because they can't deliver on their service where we only make money as you love and continue wanting our qualified leads.",
+        "Shared leads with competitors. Multiple contractors bidding on the same homeowners, driving down your closing rates and profit margins.",
     },
     {
-      title: "No Commitments",
+      title: "Zero Risk Start",
       withUs:
-        "We know we don't have to make you sign a contract because we know you'll love our leads and continue using our service.",
+        "3-day free trial with no service fees — see daily inbound flow with no commitment. Experience the results before you decide.",
       withoutUs:
-        "Monthly Contracts. They tell you it takes weeks to start getting results but they simply just have not worked in your market before and are not confident in their ability or simply don't know what they are doing.",
+        "$500-$3000 setup fees. Companies lock you in with upfront costs and monthly contracts because they can't deliver consistent results.",
     },
     {
-      title: "Cost Efficient",
+      title: "Direct Inbound Quality",
       withUs:
-        "Simply pay only $75 per qualified lead and nothing else. No closing %. Just a one-time fee only after you get a lead.",
+        "Homeowners who express interest in an estimate connect directly with you — feels natural, builds trust instantly, superior conversions. They initiated contact from the start.",
       withoutUs:
-        "Never-ending hidden fees. Unclear pricing and hidden costs can drain your budget and have you losing money.",
+        "Cold leads or shared contacts. Homeowners don't know who you are, resulting in low trust, poor response rates, and wasted time.",
+    },
+    {
+      title: "Hands-Off Operation",
+      withUs:
+        "We manage the entire AI outreach process daily; you focus on responding and closing. Consistent pipeline without the marketing headaches.",
+      withoutUs:
+        "DIY lead generation. Spend hours managing ads, follow-ups, and cold outreach instead of focusing on what you do best — closing jobs.",
+    },
+    {
+      title: "Consistent Daily Pipeline",
+      withUs:
+        "Predictable inquiries every day — end slow seasons and empty calendars. Know exactly what's coming in your pipeline.",
+      withoutUs:
+        "Feast or famine cycles. Some months are great, others are dead. Inconsistent revenue and constant stress about where the next job comes from.",
     },
     {
       title: "24/7 Support",

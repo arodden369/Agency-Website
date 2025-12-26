@@ -1,36 +1,36 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MapPin, Settings, CheckSquare, Gauge } from "lucide-react"
+import { MapPin, Settings, PhoneCall, Gauge } from "lucide-react"
 
 export function HowItWorks() {
   const steps = [
     {
       number: "Step 1",
-      title: "Choose your zip codes",
+      title: "Choose Your Exclusive Area",
       description:
-        "Each Contractor we work with gets their own zip codes exclusively handpicked, and once chosen, we cannot work with any other contractor there.",
+        "Each contractor gets exclusive handpicked territory — no competition from others we work with. Your area, your leads.",
       icon: MapPin,
     },
     {
       number: "Step 2",
-      title: "Backend at work",
+      title: "System Activation & Daily Flow",
       description:
-        "We have perfected our system to a tee which allows us to be able to start generating you quote-ready leads in as little as 1 day. No need to wait 4 weeks, get results instantly.",
+        "We optimize and activate our proprietary AI outreach daily, generating fresh direct conversations from homeowners in your territory.",
       icon: Settings,
     },
     {
       number: "Step 3",
-      title: "Qualification Criteria",
+      title: "Direct Conversations Begin",
       description:
-        "We start by verifying contact info – they are indeed the homeowner. Not contracted with a contractor. Ready to get a quote in the next 1-6 weeks. They have been vetted by our Lead Review Team and they are motivated to get a job done.",
-      icon: CheckSquare,
+        "Connect with homeowners who've expressed interest in an estimate—straight to your phone/app in real-time. Handle personally for organic feel, instant trust, and higher closing rates.",
+      icon: PhoneCall,
     },
     {
       number: "Step 4",
-      title: "You're in control",
+      title: "Full Control & Scaling",
       description:
-        "Now that you're consistently getting qualified leads, it's up to you how many you want per week. If you want to stop the lead flow, simply pause the system with the click of a button so you have maximum flexibility.",
+        "Adjust volume, pause, or scale anytime. Experience the difference with your 3-day free trial — leads start fast.",
       icon: Gauge,
     },
   ]
@@ -52,9 +52,8 @@ export function HowItWorks() {
             <span className="text-blue-400">Qualified Leads To Closings</span>
           </h2>
           <p className="text-xl text-white/60 max-w-4xl mx-auto">
-            Our process cuts high lead costs with our zero-ad spend system, keeping our team in-house to contact
-            homeowners in your area, finding and vetting qualified leads, and having them ready to hire you as a
-            contractor.
+            Our zero-ad-spend AI system licenses you consistent daily inbound leads — motivated homeowners ready for
+            quotes, reaching out directly to you for seamless, high-trust conversations.
           </p>
         </motion.div>
 
