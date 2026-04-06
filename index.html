@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsFuel — The #1 Pay-Per-Lead Partner For Home Service Enterprises</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+        :root{
+            --bg-primary:#080c18;
+            --bg-secondary:#0c1224;
+            --bg-card:#101828;
+            --bg-card-hover:#162038;
+            --accent:#4dd9e8;
+            --accent-light:#7ae8f2;
+            --accent-dark:#2ab8c8;
+            --text-white:#ffffff;
+            --text-muted:rgba(255,255,255,.55);
+            --text-faint:rgba(255,255,255,.3);
+            --border:rgba(255,255,255,.07);
+            --border-accent:rgba(77,217,232,.2);
+            --bg-light:#f4f5f8;
+            --text-dark:#111827;
+            --text-gray:#6b7280;
+            --card-border:#e5e7eb;
+            --font:'Inter',system-ui,-apple-system,sans-serif;
+            --gold-gradient:linear-gradient(135deg,#7ae8f2 0%,#4dd9e8 50%,#2ab8c8 100%);
+            --gold-shadow:0 8px 32px -4px rgba(77,217,232,.3),0 4px 12px -2px rgba(77,217,232,.2);
+            --gold-shadow-lg:0 14px 44px -4px rgba(77,217,232,.4);
+            --card-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.04);
+        }
+
+        html{scroll-behavior:smooth}
+
+        body{
+            font-family:var(--font);
+            background:var(--bg-primary);
+            color:var(--text-dark);
+            line-height:1.6;
+            overflow-x:hidden;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        /* ========== HEADER (pill) ========== */
+        .header-wrap{
+            position:fixed;top:0;left:0;right:0;z-index:1000;
+            display:flex;justify-content:center;
+            padding:12px 1.5rem 0;
+            pointer-events:none;
+        }
+        .header{
+            max-width:1100px;width:100%;
+            background:rgba(14,20,36,.88);
+            backdrop-filter:blur(24px) saturate(180%);
+            -webkit-backdrop-filter:blur(24px) saturate(180%);
+            border:1px solid rgba(255,255,255,.08);
+            border-radius:60px;
+            height:56px;display:flex;align-items:center;justify-content:space-between;
+            padding:0 1.5rem 0 1.75rem;
+            pointer-events:auto;
+            box-shadow:0 4px 24px rgba(0,0,0,.3);
+        }
+        .logo{display:flex;align-items:center;gap:0;text-decoration:none;font-size:1.25rem;font-weight:800;letter-spacing:-.02em;font-style:italic}
+        .logo-j{color:#fff}.logo-f{color:#fff}
+        .logo-dot{width:6px;height:6px;background:#fff;border-radius:50%;margin-left:2px;margin-bottom:0;display:inline-block}
+        .header-right{display:flex;align-items:center;gap:1.75rem}
+        .nav-links{display:flex;gap:1.75rem;list-style:none}
+        .nav-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s;letter-spacing:.01em}
+        .nav-links a:hover{color:#fff}
+        .header-phone{display:none}
+        .header-cta{padding:.5rem 1.35rem;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:60px;font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .25s}
+        .header-cta:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+        .hamburger{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:.5rem}
+        .mobile-nav{display:none;position:fixed;top:76px;left:1.5rem;right:1.5rem;background:rgba(14,20,36,.95);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:1rem 1.5rem 1.25rem;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+        .mobile-nav.show{display:block}
+        .mobile-nav a{display:block;padding:.55rem 0;color:rgba(255,255,255,.7);text-decoration:none;font-size:.95rem;font-weight:500}
+
+        /* ========== HERO ========== */
+        .hero{
+            position:relative;
+            padding:9.5rem 2rem 5.5rem;
+            background:linear-gradient(180deg,#080c18 0%,#0a1225 50%,#0c1630 100%);
+            overflow:hidden;
+        }
+        .hero::before{
+            content:'';position:absolute;inset:0;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+                linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+            background-size:64px 64px;pointer-events:none;z-index:1;
+        }
+        .hero-glow-1{
+            position:absolute;top:-10%;left:55%;
+            width:600px;height:600px;border-radius:50%;
+            background:radial-gradient(circle,rgba(77,217,232,.12) 0%,rgba(77,217,232,.04) 40%,transparent 70%);
+            pointer-events:none;animation:blobMove1 12s ease-in-out infinite;filter:blur(60px);
+        }
+        .hero-glow-2{
+            position:absolute;bottom:0%;left:10%;
+            width:500px;height:500px;border-radius:50%;
+            background:radial-gradient(circle,rgba(100,80,220,.1) 0%,rgba(60,40,180,.04) 40%,transparent 70%);
+            pointer-events:none;animation:blobMove2 15s ease-in-out infinite;filter:blur(70px);
+        }
+        .hero-glow-3{
+            position:absolute;top:30%;left:30%;
+            width:400px;height:400px;border-radius:50%;
+            background:radial-gradient(circle,rgba(77,217,232,.07) 0%,transparent 60%);
+            pointer-events:none;animation:blobMove3 10s ease-in-out infinite;filter:blur(50px);
+        }
+        @keyframes blobMove1{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(-40px,30px) scale(1.1)}50%{transform:translate(20px,-20px) scale(.95)}75%{transform:translate(-20px,-30px) scale(1.05)}}
+        @keyframes blobMove2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-30px) scale(1.15)}66%{transform:translate(-30px,40px) scale(.9)}}
+        @keyframes blobMove3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,40px) scale(1.1)}}
+
+        .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center;position:relative;z-index:1}
+
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem}
+        .hero-badge::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+
+        .hero h1{color:#fff;font-size:3.1rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.025em}
+        .hero h1 .g-text{background:linear-gradient(135deg,#7ae8f2 0%,#4dd9e8 50%,#2ab8c8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+        .hero-checks{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+        .hero-checks li{color:rgba(255,255,255,.78);font-size:.92rem;font-weight:500;display:flex;align-items:center;gap:.65rem}
+        .ck-icon{width:21px;height:21px;border-radius:50%;background:rgba(77,217,232,.13);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .ck-icon svg{width:11px;height:11px;color:var(--accent)}
+
+        .hero-trust{padding-top:2rem;border-top:1px solid var(--border)}
+        .hero-trust p{color:var(--text-faint);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+        .trust-logos{display:flex;align-items:center;gap:2.5rem}
+        .trust-logo{height:36px;opacity:.45;transition:opacity .3s;filter:brightness(1.3)}
+        .trust-logo:hover{opacity:.75}
+
+        /* ========== QUIZ ========== */
+        .quiz-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 25px 50px -12px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08)}
+        .quiz-progress{height:5px;background:#eef0f4}
+        .quiz-bar{height:100%;background:var(--gold-gradient);border-radius:0 3px 3px 0;transition:width .4s cubic-bezier(.4,0,.2,1);width:25%}
+        .quiz-body{padding:1.75rem 1.75rem 2rem}
+        .quiz-step-num{font-size:.68rem;font-weight:600;color:var(--text-gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
+        .quiz-card h3{font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.2rem;letter-spacing:-.01em}
+        .quiz-sub{font-size:.84rem;color:var(--text-gray);margin-bottom:1.25rem}
+        .quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.25rem}
+        .q-opt{padding:.82rem .9rem;border:2px solid #e5e7eb;border-radius:10px;background:#fff;cursor:pointer;font-family:var(--font);font-size:.88rem;font-weight:600;color:var(--text-dark);transition:all .2s;text-align:center;position:relative}
+        .q-opt:hover{border-color:rgba(77,217,232,.5);background:rgba(77,217,232,.03)}
+        .q-opt.sel{border-color:var(--accent);background:rgba(77,217,232,.06);box-shadow:0 0 0 3px rgba(77,217,232,.1)}
+        .q-opt.sel::after{content:'✓';position:absolute;top:5px;right:7px;font-size:.65rem;color:var(--accent);font-weight:700}
+        .q-btn{width:100%;padding:.85rem;background:linear-gradient(135deg,#5ce4f0 0%,#3cc8d8 100%);color:#080c18;border:none;border-radius:10px;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.45rem;box-shadow:var(--gold-shadow)}
+        .q-btn:hover{transform:translateY(-2px);box-shadow:var(--gold-shadow-lg)}
+        .q-input{width:100%;padding:.78rem .9rem;border:2px solid #e5e7eb;border-radius:10px;font-family:var(--font);font-size:.88rem;outline:none;transition:all .2s;color:var(--text-dark)}
+        .q-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(77,217,232,.1)}
+        .q-input::placeholder{color:#a0a8b8}
+        .dq{text-align:center;padding:2.5rem 1.5rem}
+        .dq-icon{width:56px;height:56px;border-radius:50%;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+        .dq h3{margin-bottom:.5rem}.dq p{color:var(--text-gray);font-size:.9rem}
+
+        /* ========== SECTIONS ========== */
+        .sec-light{background:var(--bg-light);padding:5.5rem 2rem}
+        .sec-dark{background:var(--bg-primary);padding:5.5rem 2rem;position:relative;overflow:hidden}
+        .sec-dark::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+        .sec-glow{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(77,217,232,.25),transparent)}
+        .sec-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+        .sec-tag{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+        .sec-title{text-align:center;font-size:2.35rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.02em;line-height:1.15}
+        .sec-title-w{color:#fff}.sec-title-d{color:var(--text-dark)}
+        .sec-sub{text-align:center;font-size:.95rem;max-width:580px;margin:0 auto 3rem;line-height:1.7}
+        .sec-sub-w{color:var(--text-muted)}.sec-sub-d{color:var(--text-gray)}
+        .acc-line{width:40px;height:3px;background:var(--gold-gradient);border-radius:2px;margin:0 auto 1.25rem}
+        .ctr{text-align:center}
+
+        /* ========== WHY SECTION (6 cards) ========== */
+        .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+        .feat-card{text-align:center;padding:1.75rem 1.5rem;border-radius:14px;background:#fff;border:1px solid var(--card-border);transition:all .25s}
+        .feat-card:hover{border-color:rgba(77,217,232,.3);box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-3px)}
+        .feat-icon{width:50px;height:50px;border-radius:12px;background:rgba(77,217,232,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:var(--accent)}
+        .feat-card h4{font-size:.97rem;font-weight:700;margin-bottom:.4rem;color:var(--text-dark)}
+        .feat-card p{font-size:.83rem;color:var(--text-gray);line-height:1.55}
+
+        /* ========== STATS ========== */
+        .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:3rem}
+        .stat{text-align:center}
+        .stat-num{font-size:2.6rem;font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1;margin-bottom:.3rem}
+        .stat-lbl{color:var(--text-gray);font-size:.84rem;font-weight:500}
+
+        /* ========== MAP (D3) — styles injected inline below ========== */
+
+        /* ========== TESTIMONIALS ========== */
+        .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem}
+        .t-card{background:#fff;border-radius:14px;border:1px solid var(--card-border);overflow:hidden;transition:all .25s}
+        .t-card:hover{border-color:rgba(77,217,232,.3);box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-3px)}
+        .t-thumb{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,var(--bg-primary),var(--bg-secondary))}
+        .t-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25)}
+        .t-play{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--text-dark);transition:transform .2s}
+        .t-card:hover .t-play{transform:scale(1.1)}
+        .t-info{padding:1.15rem 1.25rem}
+        .t-info h4{font-size:.92rem;font-weight:700;margin-bottom:.3rem;color:var(--text-dark)}
+        .t-info p{font-size:.8rem;color:var(--text-gray);line-height:1.5}
+        .t-hl{color:var(--accent);font-weight:700}
+
+        /* text reviews */
+        .rev-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--card-border)}
+        .rev-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid var(--card-border);transition:all .25s}
+        .rev-card:hover{border-color:rgba(77,217,232,.3);box-shadow:0 12px 36px rgba(0,0,0,.06);transform:translateY(-3px)}
+        .rev-hd{display:flex;align-items:center;gap:.7rem;margin-bottom:.75rem}
+        .rev-av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0}
+        .rev-meta h5{font-size:.88rem;font-weight:700;color:var(--text-dark)}.rev-meta span{font-size:.73rem;color:var(--text-gray)}
+        .rev-stars{color:#4dd9e8;font-size:.82rem;margin-bottom:.55rem;letter-spacing:2px}
+        .rev-card p{font-size:.83rem;color:var(--text-gray);line-height:1.6}
+
+        /* ========== CTA BTN ========== */
+        .cta-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2rem;background:linear-gradient(135deg,#5ce4f0 0%,#3cc8d8 100%);color:#080c18;border:none;border-radius:10px;font-family:var(--font);font-size:.95rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;box-shadow:var(--gold-shadow)}
+        .cta-btn:hover{transform:translateY(-2px);box-shadow:var(--gold-shadow-lg)}
+        .cta-btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:transparent;color:var(--accent);border:2px solid rgba(77,217,232,.35);border-radius:10px;font-family:var(--font);font-size:.92rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s}
+        .cta-btn-outline:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .cta-banner{background:var(--bg-secondary);text-align:center;padding:3rem 2rem;position:relative;overflow:hidden}
+        .cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 50% 50%,rgba(77,217,232,.05),transparent)}
+
+        /* ========== FAQ ========== */
+        .faq-list{max-width:700px;margin:0 auto}
+        .faq-item{border-bottom:1px solid var(--border)}
+        .faq-q{width:100%;background:none;border:none;padding:1.25rem 0;font-family:var(--font);font-size:.97rem;font-weight:600;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;text-align:left;transition:color .2s;gap:1rem}
+        .faq-q:hover{color:var(--accent)}
+        .faq-chev{flex-shrink:0;width:18px;height:18px;transition:transform .3s;color:rgba(255,255,255,.35)}
+        .faq-q.active .faq-chev{transform:rotate(180deg);color:var(--accent)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+        .faq-a.open{max-height:250px}
+        .faq-a p{font-size:.88rem;color:var(--text-muted);line-height:1.7;padding-bottom:1.25rem}
+
+        /* ========== FOOTER NAV ========== */
+        .footer-nav{background:var(--bg-primary);padding:1.25rem 2rem;border-top:1px solid var(--border)}
+        .footer-nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .footer-nav-links{display:flex;gap:1.75rem;list-style:none}
+        .footer-nav-links a{color:var(--text-muted);text-decoration:none;font-size:.84rem;font-weight:500;transition:color .2s}
+        .footer-nav-links a:hover{color:#fff}
+
+        /* ========== FOOTER ========== */
+        .footer{background:#060a15;padding:1.25rem 2rem;border-top:1px solid var(--border)}
+        .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+        .footer-left{display:flex;align-items:center;gap:.4rem;color:var(--text-muted);font-size:.78rem}
+        .footer-right{color:var(--text-faint);font-size:.73rem}
+        .footer .footer-nav-links{display:flex;gap:1.5rem;list-style:none}
+        .footer .footer-nav-links a{color:var(--text-muted);text-decoration:none;font-size:.8rem;font-weight:500;transition:color .2s}
+        .footer .footer-nav-links a:hover{color:#fff}
+
+        /* ========== REVEAL ========== */
+        .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+        .rv.vis{opacity:1;transform:translateY(0)}
+        .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:1024px){
+            .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+            .quiz-card{max-width:480px}
+            .hero h1{font-size:2.4rem}
+        }
+        @media(max-width:768px){
+            .header-right .nav-links{display:none}
+            .hamburger{display:block}
+            .header{padding:0 1rem 0 1.25rem}
+            .hero{padding:7rem 1.25rem 3.5rem}
+            .hero h1{font-size:2rem}
+            .sec-light,.sec-dark{padding:4rem 1.25rem}
+            .sec-title{font-size:1.8rem}
+            .feat-grid,.test-grid,.rev-row{grid-template-columns:1fr}
+            .stats-row{grid-template-columns:repeat(2,1fr);gap:1.25rem}
+            .stat-num{font-size:2rem}
+            .footer-nav-inner{flex-direction:column;gap:1rem}
+            .trust-logos{gap:1.5rem}.trust-logo{height:26px}
+        }
+
+        @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header-wrap">
+    <header class="header">
+        <a href="#" class="logo"><span class="logo-j">Jobs</span><span class="logo-f">Fuel</span><span class="logo-dot"></span></a>
+        <div class="header-right">
+            <ul class="nav-links">
+                <li><a href="#difference">The Difference</a></li>
+                <li><a href="#numbers">The Numbers</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="https://links.tryjobsfuel.com/widget/booking/yVg1a5YBBPAqC7XeMKEX" class="header-cta" target="_blank">Book a Call</a>
+        </div>
+        <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('show')" aria-label="Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </header>
+</div>
+<div class="mobile-nav">
+    <a href="#difference">The Difference</a>
+    <a href="#numbers">The Numbers</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:+14069448185">(406) 944-8185</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-glow-3"></div>
+    <div class="hero-inner">
+        <div>
+            <span class="hero-badge">Lead Generation For Home Improvement</span>
+            <h1>The #1 <span class="g-text">Pay-Per-Lead</span> Partner For Home Service Enterprises</h1>
+            <ul class="hero-checks">
+                <li><span class="ck-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Phone, Address, &amp; Home Value Verified</li>
+                <li><span class="ck-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1000's of Leads/mo &amp; No Long Contracts</li>
+                <li><span class="ck-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Only Pay Per Lead, No Ad Spend or Retainer</li>
+            </ul>
+            <div class="hero-trust">
+                <p>Trusted by 150+ Leading Home Improvement Brands</p>
+                <div class="trust-logos">
+                    <svg class="trust-logo" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 38L50 22L70 38" stroke="#4a6fa5" stroke-width="2.5" fill="none"/>
+                        <path d="M20 42L50 18L80 42" stroke="#4a6fa5" stroke-width="2.5" fill="none"/>
+                        <path d="M10 46L50 14L90 46" stroke="#4a6fa5" stroke-width="2.5" fill="none"/>
+                        <circle cx="50" cy="10" r="3.5" fill="#d4a520"/>
+                        <text x="100" y="26" fill="#6a8ab5" font-family="Inter" font-size="10" font-weight="700">THREE</text>
+                        <text x="100" y="40" fill="#6a8ab5" font-family="Inter" font-size="10" font-weight="700">BROTHERS</text>
+                    </svg>
+                    <svg class="trust-logo" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="25" r="18" stroke="#888" stroke-width="2" fill="none"/>
+                        <text x="16" y="30" fill="#6a8ab5" font-family="Inter" font-size="13" font-weight="800">AE</text>
+                        <text x="52" y="22" fill="#ccc" font-family="Inter" font-size="12" font-weight="800">AMAZING</text>
+                        <text x="52" y="38" fill="#ccc" font-family="Inter" font-size="12" font-weight="800">EXTERIORS</text>
+                    </svg>
+                    <svg class="trust-logo" viewBox="0 0 240 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 35L30 20L45 35" stroke="#40c9c0" stroke-width="2.5" fill="none"/>
+                        <rect x="23" y="28" width="14" height="10" stroke="#40c9c0" stroke-width="2" fill="none"/>
+                        <text x="55" y="24" fill="#40c9c0" font-family="Inter" font-size="13" font-weight="800">LEGACY</text>
+                        <text x="55" y="39" fill="#7ab" font-family="Inter" font-size="8.5" font-weight="500">home remodeling</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-card" id="quiz">
+            <div class="quiz-progress"><div class="quiz-bar" id="pBar"></div></div>
+            <div class="quiz-body">
+                <div class="quiz-step" id="qs1">
+                    <div class="quiz-step-num">Step 1 of 4</div>
+                    <h3>What kind of leads do you need?</h3>
+                    <p class="quiz-sub">Select your service type</p>
+                    <div class="quiz-opts">
+                        <button class="q-opt" onclick="sel(this,1)">Roofing</button>
+                        <button class="q-opt" onclick="sel(this,1)">Siding</button>
+                        <button class="q-opt" onclick="sel(this,1)">Windows</button>
+                        <button class="q-opt" onclick="sel(this,1)">Baths</button>
+                    </div>
+                    <button class="q-btn" onclick="go(2)">Continue <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+                <div class="quiz-step" id="qs2" style="display:none">
+                    <div class="quiz-step-num">Step 2 of 4</div>
+                    <h3>What is your role?</h3>
+                    <p class="quiz-sub">Select the option that best describes you</p>
+                    <div class="quiz-opts">
+                        <button class="q-opt" onclick="sel(this,2)" data-q="y">Owner / Executive</button>
+                        <button class="q-opt" onclick="sel(this,2)" data-q="y">Marketing / Sales Leader</button>
+                        <button class="q-opt" onclick="sel(this,2)" data-q="m">Salesperson</button>
+                        <button class="q-opt" onclick="sel(this,2)" data-q="n">Other</button>
+                    </div>
+                    <button class="q-btn" onclick="go(3)">Continue <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+                <div class="quiz-step" id="qs3" style="display:none">
+                    <div class="quiz-step-num">Step 3 of 4</div>
+                    <h3>What is your annual revenue?</h3>
+                    <p class="quiz-sub">Select your revenue range</p>
+                    <div class="quiz-opts">
+                        <button class="q-opt" onclick="sel(this,3)" data-q="n">$0 – $1M</button>
+                        <button class="q-opt" onclick="sel(this,3)" data-q="y">$1M – $5M</button>
+                        <button class="q-opt" onclick="sel(this,3)" data-q="y">$5M – $10M</button>
+                        <button class="q-opt" onclick="sel(this,3)" data-q="y">$10M+</button>
+                    </div>
+                    <button class="q-btn" onclick="goCheck()">Continue <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                </div>
+                <div class="quiz-step" id="qs4" style="display:none">
+                    <div class="quiz-step-num">Step 4 of 4</div>
+                    <h3>Almost there!</h3>
+                    <p class="quiz-sub">Enter your details to see if you qualify</p>
+                    <form onsubmit="event.preventDefault();window.open('https://links.tryjobsfuel.com/widget/booking/yVg1a5YBBPAqC7XeMKEX','_blank')" style="display:flex;flex-direction:column;gap:.6rem">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+                            <input type="text" placeholder="First Name" required class="q-input">
+                            <input type="text" placeholder="Last Name" required class="q-input">
+                        </div>
+                        <input type="email" placeholder="Email" required class="q-input">
+                        <input type="tel" placeholder="Phone (e.g. 555-123-4567)" required pattern="[\d\s\-\(\)\+\.]{7,}" title="Please enter a valid phone number (at least 7 digits)" class="q-input" id="phoneInput">
+                        <input type="url" placeholder="Website" class="q-input">
+                        <button type="submit" class="q-btn" style="margin-top:.15rem">See If You Qualify <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    </form>
+                </div>
+                <div class="quiz-step dq" id="qsDQ" style="display:none">
+                    <div class="dq-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></div>
+                    <h3>Thanks for Your Interest</h3>
+                    <p>Based on your responses, our program may not be the right fit at this time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY CONTRACTORS CHOOSE US ===== -->
+<section class="sec-light" id="difference">
+    <div class="sec-inner">
+        <h2 class="sec-title sec-title-d rv">Why Contractors Choose Us</h2>
+        <p class="sec-sub sec-sub-d rv">We've helped hundreds of contractors grow their businesses with high-quality, exclusive leads. Here's what makes us different.</p>
+        <div class="feat-grid">
+            <div class="feat-card rv">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                <h4>Only Pay Per Qualified Lead</h4>
+                <p>Only pay for exclusive, pre-qualified leads that meet your criteria. No setup fee, no retainer.</p>
+            </div>
+            <div class="feat-card rv rd1">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                <h4>Industry Leading Set Rates</h4>
+                <p>With full exclusivity and unique lead prequalification, most partners see set rates between 25-35%.</p>
+            </div>
+            <div class="feat-card rv rd2">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h4>Pre-Qualified Prospects</h4>
+                <p>Every lead is screened for confirmed homeownership, valid address, valid phone number, minimum home value, and minimum job size.</p>
+            </div>
+            <div class="feat-card rv">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+                <h4>Scalability</h4>
+                <p>Our system is built for large contractors purchasing 50-100+ leads per day.</p>
+            </div>
+            <div class="feat-card rv rd1">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+                <h4>No Long Contracts</h4>
+                <p>We earn your business month after month with high-quality leads that grow your company.</p>
+            </div>
+            <div class="feat-card rv rd2">
+                <div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h4>TCPA Compliant</h4>
+                <p>Receive TrustedForm certificates with every lead, keeping you safe and compliant.</p>
+            </div>
+        </div>
+        <div class="ctr rv"><a href="#quiz" class="cta-btn">See If You Qualify <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+</section>
+
+<!-- ===== NUMBERS + MAP ===== -->
+<section class="sec-light" id="numbers" style="padding-top:0">
+    <div class="sec-inner">
+        <h2 class="sec-title sec-title-d rv">Numbers That Speak For Themselves</h2>
+        <div class="acc-line rv"></div>
+        <div style="height:1.5rem"></div>
+        <div class="stats-row rv">
+            <div class="stat"><div class="stat-num">150+</div><div class="stat-lbl">Active Partners</div></div>
+            <div class="stat"><div class="stat-num">$120M+</div><div class="stat-lbl">Revenue Generated</div></div>
+            <div class="stat"><div class="stat-num">30%+</div><div class="stat-lbl">Avg. Set Rate</div></div>
+            <div class="stat"><div class="stat-num">4.8/5</div><div class="stat-lbl">Contractor Rating</div></div>
+        </div>
+
+        <!-- 1. Include D3 and TopoJSON libraries for the perfect map rendering -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://unpkg.com/topojson-client@3"></script>
+
+        <!-- 2. Map and Animation Styles -->
+        <style>
+          #animated-us-map {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 10;
+            position: relative;
+          }
+          .state-path {
+            fill: #1f3b54;
+            stroke: #ffffff;
+            stroke-width: 0.5px;
+          }
+          .map-pin-group {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+          }
+          .map-pin-group path {
+            transform-origin: 0px 0px;
+            transform: scale(0);
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+          .map-pin-group circle {
+            transform-origin: 0px 0px;
+            transform: scale(0);
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+          }
+          .map-pin-group.visible {
+            opacity: 1;
+          }
+          .map-pin-group.visible path,
+          .map-pin-group.visible circle {
+            transform: scale(1);
+          }
+        </style>
+
+        <!-- 3. The Container -->
+        <div id="animated-us-map"></div>
+
+        <!-- 4. The Map Generation and Animation Logic -->
+        <script>
+          document.addEventListener("DOMContentLoaded", async () => {
+            const container = document.getElementById('animated-us-map');
+            if (!container) return;
+
+            // A. Fetch the perfect map data
+            const response = await fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json');
+            const us = await response.json();
+
+            // B. Convert to GeoJSON and filter out Alaska (02), Hawaii (15), and PR (72)
+            const states = topojson.feature(us, us.objects.states).features.filter(
+              d => d.id !== "02" && d.id !== "15" && d.id !== "72"
+            );
+
+            // C. Set up SVG and Projection
+            const width = 960;
+            const height = 600;
+
+            const svg = d3.select(container)
+              .append("svg")
+              .attr("viewBox", `0 0 ${width} ${height}`)
+              .attr("width", "100%")
+              .attr("height", "100%")
+              .style("overflow", "visible");
+
+            const projection = d3.geoAlbers().scale(1200).translate([480, 280]);
+            const pathGenerator = d3.geoPath().projection(projection);
+
+            // D. Draw the States
+            svg.append("g")
+              .attr("class", "states")
+              .selectAll("path")
+              .data(states)
+              .enter()
+              .append("path")
+              .attr("class", "state-path")
+              .attr("d", pathGenerator);
+
+            // E. Define Pins (Longitude, Latitude)
+            const pinCoords = [
+              // Northeast
+              [-74.006, 40.7128], [-71.0589, 42.3601], [-75.1652, 39.9526], [-77.0369, 38.9072],
+              [-76.6122, 39.2904], [-79.9959, 40.4406], [-78.8784, 42.8864], [-73.7562, 42.6526],
+              [-71.4128, 41.8240], [-72.6851, 41.7637],
+              // Southeast
+              [-80.1918, 25.7617], [-84.3880, 33.7490], [-80.8431, 35.2271], [-78.6382, 35.7796],
+              [-81.3792, 28.5383], [-82.4572, 27.9506], [-86.8025, 36.1627], [-90.0490, 35.1495],
+              [-86.8104, 33.5207], [-81.0348, 34.0007], [-79.9311, 32.7765], [-82.3248, 29.6516],
+              // Midwest
+              [-87.6298, 41.8781], [-83.0458, 42.3314], [-82.9988, 39.9612], [-81.6944, 41.4993],
+              [-86.1581, 39.7684], [-87.9065, 43.0389], [-93.2650, 44.9778], [-90.1994, 38.6270],
+              [-94.5786, 39.0997], [-93.6091, 41.5868], [-95.9345, 41.2565], [-97.3301, 37.6872],
+              [-84.5120, 39.1031], [-89.3867, 43.0731], [-83.7430, 42.2808], [-96.7298, 40.8136],
+              // South/Texas
+              [-90.0715, 29.9511], [-95.3698, 29.7604], [-96.7970, 32.7767], [-97.7431, 30.2672],
+              [-98.4936, 29.4241], [-106.4850, 31.7619], [-97.5164, 35.4676], [-92.2896, 34.7465],
+              [-93.2812, 30.2241], [-97.1081, 32.7357], [-95.9928, 36.1540], [-89.1806, 30.3674],
+              // Mountain
+              [-104.9903, 39.7392], [-104.8214, 38.8339], [-112.0740, 33.4484], [-110.9265, 32.2226],
+              [-115.1398, 36.1699], [-111.8910, 40.7608], [-116.2023, 43.6150], [-106.6504, 35.0844],
+              [-105.0844, 40.5853], [-119.8138, 39.5296], [-112.0111, 43.4927], [-108.5007, 45.7833],
+              // West Coast
+              [-118.2437, 34.0522], [-122.4194, 37.7749], [-122.3321, 47.6062], [-122.6765, 45.5231],
+              [-117.1611, 32.7157], [-121.8863, 37.3382], [-121.4944, 38.5816], [-119.7871, 36.7378],
+              [-117.4260, 47.6588], [-118.1937, 33.7701], [-119.6982, 34.4208], [-123.0868, 44.0521]
+            ];
+
+            // F. Project and sort pins East to West (highest X to lowest X)
+            const projectedPins = pinCoords
+              .map(coord => {
+                const proj = projection(coord);
+                return proj ? { x: proj[0], y: proj[1] } : null;
+              })
+              .filter(Boolean)
+              .sort((a, b) => b.x - a.x);
+
+            // G. Draw Pins
+            const pinsGroup = svg.append("g").attr("class", "pins");
+            const pinPath = "M0 -24 C -6 -24 -12 -18 -12 -12 C -12 -5 0 0 0 0 C 0 0 12 -5 12 -12 C 12 -18 6 -24 0 -24 Z";
+
+            const pinNodes = [];
+
+            projectedPins.forEach(loc => {
+              const g = pinsGroup.append("g")
+                .attr("class", "map-pin-group")
+                .attr("transform", `translate(${loc.x}, ${loc.y})`);
+
+              g.append("path")
+                .attr("d", pinPath)
+                .attr("fill", "#f97316"); // Orange color
+
+              g.append("circle")
+                .attr("cx", 0)
+                .attr("cy", -15)
+                .attr("r", 4)
+                .attr("fill", "#ffffff");
+
+              pinNodes.push(g.node());
+            });
+
+            // H. Intersection Observer for Animation
+            const observer = new IntersectionObserver((entries) => {
+              if (entries[0].isIntersecting) {
+                pinNodes.forEach((node, index) => {
+                  setTimeout(() => {
+                    node.classList.add('visible');
+                  }, index * 40); // 40ms delay between each pin
+                });
+                observer.disconnect(); // Only animate once
+              }
+            }, { threshold: 0.3 });
+
+            observer.observe(container);
+          });
+        </script>
+
+        <div class="ctr rv" style="margin-top:2rem">
+            <a href="#quiz" class="cta-btn-outline">Join 150+ Contractors <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="sec-light" id="testimonials" style="padding-top:0">
+    <div class="sec-inner">
+        <h2 class="sec-title sec-title-d rv">Contractors Love Working With Us</h2>
+        <p class="sec-sub sec-sub-d rv">Don't just take our word for it. Here's what our partners have to say.</p>
+
+        <div class="test-grid">
+            <div class="t-card rv">
+                <div class="t-info">
+                    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.65rem">
+                        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0">J</div>
+                        <div><h4 style="margin:0">Jeff</h4><span style="font-size:.75rem;color:var(--text-gray)">One Creator Painting</span></div>
+                    </div>
+                    <div style="display:inline-block;padding:.2rem .55rem;background:rgba(77,217,232,.1);color:var(--accent-dark);border-radius:5px;font-size:.72rem;font-weight:700;margin-bottom:.5rem">$12.5k Profit</div>
+                    <div class="rev-stars">★★★★★</div>
+                    <p>From my first 3 leads, closed a $16k project with multiple more estimates in the pipeline.</p>
+                </div>
+            </div>
+            <div class="t-card rv rd1">
+                <div class="t-info">
+                    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.65rem">
+                        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0">R</div>
+                        <div><h4 style="margin:0">Rafael</h4><span style="font-size:.75rem;color:var(--text-gray)">Bayze Painting</span></div>
+                    </div>
+                    <div style="display:inline-block;padding:.2rem .55rem;background:rgba(34,197,94,.1);color:#16a34a;border-radius:5px;font-size:.72rem;font-weight:700;margin-bottom:.5rem">Active</div>
+                    <div class="rev-stars">★★★★★</div>
+                    <p>Finishing up a job from your leads this week. Happy with how you send them over — keep them coming.</p>
+                </div>
+            </div>
+            <div class="t-card rv rd2">
+                <div class="t-info">
+                    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.65rem">
+                        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0">T</div>
+                        <div><h4 style="margin:0">Theo</h4><span style="font-size:.75rem;color:var(--text-gray)">Johnson's Gutter Company</span></div>
+                    </div>
+                    <div style="display:inline-block;padding:.2rem .55rem;background:rgba(77,217,232,.1);color:var(--accent-dark);border-radius:5px;font-size:.72rem;font-weight:700;margin-bottom:.5rem">60-70% Close Rate</div>
+                    <div class="rev-stars">★★★★★</div>
+                    <p>Better ratio than I've seen. Got jobs on the books — 2 immediates plus 3 more coming.</p>
+                </div>
+            </div>
+            <div class="t-card rv">
+                <div class="t-info">
+                    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.65rem">
+                        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0">S</div>
+                        <div><h4 style="margin:0">Steve</h4><span style="font-size:.75rem;color:var(--text-gray)">Moondance Painting</span></div>
+                    </div>
+                    <div style="display:inline-block;padding:.2rem .55rem;background:rgba(34,197,94,.1);color:#16a34a;border-radius:5px;font-size:.72rem;font-weight:700;margin-bottom:.5rem">Active</div>
+                    <div class="rev-stars">★★★★★</div>
+                    <p>60-70% are good leads. Better ratio than I've seen elsewhere. Got jobs on the books.</p>
+                </div>
+            </div>
+            <div class="t-card rv rd1">
+                <div class="t-info">
+                    <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.65rem">
+                        <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#4dd9e8,#2ab8c8);display:flex;align-items:center;justify-content:center;color:#080c18;font-weight:700;font-size:.95rem;flex-shrink:0">P</div>
+                        <div><h4 style="margin:0">Paul</h4><span style="font-size:.75rem;color:var(--text-gray)">Dreamfield Landscaping</span></div>
+                    </div>
+                    <div style="display:inline-block;padding:.2rem .55rem;background:rgba(77,217,232,.1);color:var(--accent-dark);border-radius:5px;font-size:.72rem;font-weight:700;margin-bottom:.5rem">$300k+ Signed</div>
+                    <div class="rev-stars">★★★★★</div>
+                    <p>We have now signed three contracts that are six figures. You guys are doing awesome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Reviews -->
+        <div class="rev-row rv">
+            <div class="rev-card">
+                <div class="rev-hd"><div class="rev-av">K</div><div class="rev-meta"><h5>Kevin M.</h5><span>Roofing · Austin, TX</span></div></div>
+                <div class="rev-stars">★★★★★</div>
+                <p>Leads were exclusive like they promised. Called the first one within 5 minutes, booked the job. Solid operation.</p>
+            </div>
+            <div class="rev-card">
+                <div class="rev-hd"><div class="rev-av">D</div><div class="rev-meta"><h5>Damien S.</h5><span>Painting · Nashville, TN</span></div></div>
+                <div class="rev-stars">★★★★★</div>
+                <p>I've tried other lead providers. These leads actually pick up because they're expecting my call. Night and day.</p>
+            </div>
+            <div class="rev-card">
+                <div class="rev-hd"><div class="rev-av">J</div><div class="rev-meta"><h5>Jorge R.</h5><span>Windows · Miami, FL</span></div></div>
+                <div class="rev-stars">★★★★★</div>
+                <p>Was skeptical. Called three references before signing up. They all vouched. Got my first lead in 48 hours.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec-dark" id="faq">
+    <div class="sec-glow"></div>
+    <div class="sec-inner">
+        <h2 class="sec-title sec-title-w rv">Frequently Asked Questions</h2>
+        <div class="acc-line rv"></div>
+        <div style="height:.5rem"></div>
+        <div class="faq-list">
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">Are leads exclusive to us?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>Yes, every lead is exclusive to your company. We never sell the same lead to multiple contractors, ensuring you have the best opportunity to close every prospect.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">Who qualifies to work with you?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>We work with established home service companies that have a proven sales process and the capacity to handle a high volume of leads. Complete our qualification form to see if you're a fit.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">How much do the leads cost?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>Lead pricing varies based on your service type, location, and volume. We'll discuss pricing during our consultation to find a package that works for your budget and goals.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">What happens when we book a meeting?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>During our meeting, we'll review your current sales process, discuss your lead needs, and determine if our partnership is the right fit. There's no obligation.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">Is there an agreement?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>We have a simple, straightforward agreement with no long-term commitment required. You can pause or stop at any time without penalties.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">How fast can we get leads?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>Most partners start receiving leads within 24-48 hours of completing onboarding. We work quickly to get your campaigns up and running.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">How many leads can we buy per month?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>Our system can deliver anywhere from a few dozen to thousands of leads per month depending on your capacity, budget, and market.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">How are leads qualified?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>Every lead goes through our multi-step verification process including homeownership confirmation, phone validation, home value assessment, and interest confirmation.</p></div></div>
+            <div class="faq-item rv"><button class="faq-q" onclick="tFaq(this)">Where do you generate your leads from?<svg class="faq-chev" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-a"><p>We generate leads through a variety of proprietary digital marketing channels, including targeted advertising and content marketing across multiple platforms.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA + FOOTER ===== -->
+<div style="background:var(--bg-secondary);text-align:center;padding:3.5rem 2rem;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 50% 50%,rgba(77,217,232,.04),transparent)"></div>
+    <a href="#quiz" class="cta-btn" style="position:relative;z-index:1;font-size:1rem;padding:1.05rem 2.25rem">See If You Qualify <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <a href="#" class="logo" style="font-size:1rem"><span class="logo-j">Jobs</span><span class="logo-f">Fuel</span><span class="logo-dot"></span></a>
+        </div>
+        <ul class="footer-nav-links">
+            <li><a href="#difference">The Difference</a></li>
+            <li><a href="#numbers">The Numbers</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="tel:+14069448185">(406) 944-8185</a></li>
+        </ul>
+        <div class="footer-right">&copy; 2026 JobsFuel. All rights reserved.</div>
+    </div>
+</footer>
+
+<script>
+let Q={s:1,role:null,rev:null};
+function sel(el,s){el.closest('.quiz-opts').querySelectorAll('.q-opt').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');if(s===2)Q.role=el.dataset.q;if(s===3)Q.rev=el.dataset.q}
+function go(s){let cur=document.getElementById('qs'+Q.s);if(cur&&!cur.querySelector('.q-opt.sel'))return;Q.s=s;document.querySelectorAll('.quiz-step').forEach(e=>e.style.display='none');let t=document.getElementById('qs'+s);if(t){t.style.display='block';t.style.animation='fadeIn .3s ease'}document.getElementById('pBar').style.width=(s/4*100)+'%'}
+function goCheck(){let cur=document.getElementById('qs3');if(!cur.querySelector('.q-opt.sel'))return;if(Q.role==='n'||Q.rev==='n'){document.querySelectorAll('.quiz-step').forEach(e=>e.style.display='none');let d=document.getElementById('qsDQ');d.style.display='block';d.style.animation='fadeIn .3s ease';let b=document.getElementById('pBar');b.style.width='100%';b.style.background='#ef4444';return}go(4)}
+function tFaq(b){let a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('active'));if(!o){a.classList.add('open');b.classList.add('active')}}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();let t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.querySelector('.mobile-nav')?.classList.remove('show')}})});
+
+
+</script>
+
+</body>
+</html>
